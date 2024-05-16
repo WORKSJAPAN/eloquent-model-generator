@@ -185,7 +185,7 @@ class DatabaseManager implements ConnectionResolverInterface
      * @param  string  $type
      * @return \Illuminate\Database\Connection
      */
-    protected function configure(Connection $connection, $type)
+    protected function configure(\Illuminate\Database\Connection $connection, $type)
     {
         $connection = $this->setPdoForType($connection, $type)->setReadWriteType($type);
 
