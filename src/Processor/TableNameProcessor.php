@@ -2,7 +2,7 @@
 
 namespace Krlove\EloquentModelGenerator\Processor;
 
-use Illuminate\Database\DatabaseManager;
+use Krlove\EloquentModelGenerator\DatabaseManager;
 use Krlove\CodeGenerator\Model\ClassNameModel;
 use Krlove\CodeGenerator\Model\DocBlockModel;
 use Krlove\CodeGenerator\Model\PropertyModel;

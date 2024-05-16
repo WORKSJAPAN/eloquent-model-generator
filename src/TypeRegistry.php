@@ -2,7 +2,7 @@
 
 namespace Krlove\EloquentModelGenerator;
 
-use Illuminate\Database\DatabaseManager;
+use Krlove\EloquentModelGenerator\DatabaseManager;
 
 class TypeRegistry
 {

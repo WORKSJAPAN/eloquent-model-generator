@@ -3,7 +3,7 @@
 namespace Krlove\Tests\Integration;
 
 use Illuminate\Database\Connectors\SQLiteConnector;
-use Illuminate\Database\DatabaseManager;
+use Krlove\EloquentModelGenerator\DatabaseManager;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\SQLiteConnection;
 use Krlove\EloquentModelGenerator\Config\Config;
