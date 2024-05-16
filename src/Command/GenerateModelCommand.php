@@ -3,7 +3,7 @@
 namespace Krlove\EloquentModelGenerator\Command;
 
 use Illuminate\Console\Command;
-use Illuminate\Database\DatabaseManager;
+use Krlove\EloquentModelGenerator\DatabaseManager;
 use Krlove\EloquentModelGenerator\Generator;
 use Krlove\EloquentModelGenerator\Helper\Prefix;
 use Symfony\Component\Console\Input\InputArgument;
