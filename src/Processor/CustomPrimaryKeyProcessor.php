@@ -2,10 +2,10 @@
 
 namespace Krlove\EloquentModelGenerator\Processor;
 
+use Illuminate\Database\CustomDatabaseManager;
 use Krlove\CodeGenerator\Model\DocBlockModel;
 use Krlove\CodeGenerator\Model\PropertyModel;
 use Krlove\EloquentModelGenerator\Config\Config;
-use Krlove\EloquentModelGenerator\CustomDatabaseManager;
 use Krlove\EloquentModelGenerator\Helper\Prefix;
 use Krlove\EloquentModelGenerator\Model\EloquentModel;
 use Krlove\EloquentModelGenerator\TypeRegistry;
