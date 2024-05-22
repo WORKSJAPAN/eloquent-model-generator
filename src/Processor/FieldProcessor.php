@@ -2,7 +2,7 @@
 
 namespace Krlove\EloquentModelGenerator\Processor;
 
-use Krlove\EloquentModelGenerator\DatabaseManager;
+use Krlove\EloquentModelGenerator\CustomDatabaseManager;
 use Krlove\CodeGenerator\Model\DocBlockModel;
 use Krlove\CodeGenerator\Model\PropertyModel;
 use Krlove\CodeGenerator\Model\VirtualPropertyModel;
@@ -13,7 +13,7 @@ use Krlove\EloquentModelGenerator\TypeRegistry;
 
 class FieldProcessor implements ProcessorInterface
 {
-    public function __construct(private DatabaseManager $databaseManager, private TypeRegistry $typeRegistry) {}
+    public function __construct(private CustomDatabaseManager $databaseManager, private TypeRegistry $typeRegistry) {}
     
     public function process(EloquentModel $model, Config $config): void
     {

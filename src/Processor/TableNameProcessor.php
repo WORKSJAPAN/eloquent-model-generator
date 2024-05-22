@@ -2,7 +2,7 @@
 
 namespace Krlove\EloquentModelGenerator\Processor;
 
-use Krlove\EloquentModelGenerator\DatabaseManager;
+use Krlove\EloquentModelGenerator\CustomDatabaseManager;
 use Krlove\CodeGenerator\Model\ClassNameModel;
 use Krlove\CodeGenerator\Model\DocBlockModel;
 use Krlove\CodeGenerator\Model\PropertyModel;
@@ -15,7 +15,7 @@ use Krlove\EloquentModelGenerator\Model\EloquentModel;
 
 class TableNameProcessor implements ProcessorInterface
 {
-    public function __construct(private DatabaseManager $databaseManager) {}
+    public function __construct(private CustomDatabaseManager $databaseManager) {}
 
     public function process(EloquentModel $model, Config $config): void
     {

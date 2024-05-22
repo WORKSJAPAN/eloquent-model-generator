@@ -3,7 +3,7 @@
 namespace Krlove\Tests\Integration;
 
 use Illuminate\Database\Connectors\SQLiteConnector;
-use Krlove\EloquentModelGenerator\DatabaseManager;
+use Krlove\EloquentModelGenerator\CustomDatabaseManager;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\SQLiteConnection;
 use Krlove\EloquentModelGenerator\Config\Config;
@@ -40,7 +40,7 @@ class GeneratorTest extends TestCase
 
     protected function setUp(): void
     {
-        $databaseManagerMock = $this->createMock(DatabaseManager::class);
+        $databaseManagerMock = $this->createMock(CustomDatabaseManager::class);
         $databaseManagerMock->expects($this->any())
             ->method('connection')
             ->willReturn(self::$connection);

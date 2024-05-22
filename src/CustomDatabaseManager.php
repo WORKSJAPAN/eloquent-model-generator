@@ -17,7 +17,7 @@ use RuntimeException;
 /**
  * @mixin \Illuminate\Database\Connection
  */
-class DatabaseManager implements ConnectionResolverInterface
+class CustomDatabaseManager implements ConnectionResolverInterface
 {
     use Macroable {
         __call as macroCall;

@@ -2,7 +2,7 @@
 
 namespace Krlove\EloquentModelGenerator;
 
-use Krlove\EloquentModelGenerator\DatabaseManager;
+use Krlove\EloquentModelGenerator\CustomDatabaseManager;
 
 class TypeRegistry
 {
@@ -29,7 +29,7 @@ class TypeRegistry
         'enum'         => 'string',
     ];
 
-    public function __construct(private DatabaseManager $databaseManager) {}
+    public function __construct(private CustomDatabaseManager $databaseManager) {}
 
     public function registerType(string $type, string $value, string $connection = null): void
     {

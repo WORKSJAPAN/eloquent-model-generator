@@ -2,7 +2,7 @@
 
 namespace Krlove\EloquentModelGenerator\Processor;
 
-use Krlove\EloquentModelGenerator\DatabaseManager;
+use Krlove\EloquentModelGenerator\CustomDatabaseManager;
 use Krlove\EloquentModelGenerator\Config\Config;
 use Krlove\EloquentModelGenerator\Helper\EmgHelper;
 use Krlove\EloquentModelGenerator\Helper\Prefix;
@@ -14,7 +14,7 @@ use Krlove\EloquentModelGenerator\Model\HasOne;
 
 class RelationProcessor implements ProcessorInterface
 {
-    public function __construct(private DatabaseManager $databaseManager) {}
+    public function __construct(private CustomDatabaseManager $databaseManager) {}
 
     public function process(EloquentModel $model, Config $config): void
     {
