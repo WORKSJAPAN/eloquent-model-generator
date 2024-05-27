@@ -21,9 +21,15 @@
         "illuminate/console": "^11.0",
         "doctrine/dbal": "^3.0",
         "krlove/code-generator": "^1.0",
-      "ext-pdo": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "^10.5"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Krlove\\EloquentModelGenerator\\Provider\\GeneratorServiceProvider"
+            ]
+        }
     }
 }
