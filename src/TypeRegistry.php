@@ -29,7 +29,7 @@ class TypeRegistry
         'enum'         => 'string',
     ];
 
-    public function __construct(private CustomDatabaseManager $databaseManager) {
+    public function __construct(private CustomDatabaseManager $databaseManager)
     {
         foreach ($this->types as $sqlType => $phpType) {
             $this->registerDoctrineTypeMapping($sqlType, $phpType);
