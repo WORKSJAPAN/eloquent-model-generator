@@ -3,6 +3,7 @@
 namespace Krlove\EloquentModelGenerator;
 
 use Doctrine\DBAL\Types\Type;
+use Illuminate\Database\Connection;
 use Illuminate\Database\ConnectionResolverInterface;
 use Illuminate\Database\Connectors\ConnectionFactory;
 use Illuminate\Database\Events\ConnectionEstablished;
