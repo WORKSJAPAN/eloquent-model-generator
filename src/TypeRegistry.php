@@ -29,28 +29,18 @@ class TypeRegistry
         'enum'         => 'string',
     ];
 
-    public function __construct(private CustomDatabaseManager $databaseManager)
-    {
-        foreach ($this->types as $sqlType => $phpType) {
-            $this->registerDoctrineTypeMapping($sqlType, $phpType);
-        }
-    }
+    public function __construct(private CustomDatabaseManager $databaseManager) {}
 
-    public function registerType(string $sqlType, string $phpType, string $connection = null): void
+    public function registerType(string $type, string $value, string $connection = null): void
     {
-        $this->types[$sqlType] = $phpType;
+        $this->types[$type] = $value;
 
-        $this->registerDoctrineTypeMapping($sqlType, $phpType, $connection);
+        $manager = $this->databaseManager->connection($connection)->getDoctrineSchemaManager();
+        $manager->getDatabasePlatform()->registerDoctrineTypeMapping($type, $value);
     }
 
     public function resolveType(string $type): string
     {
         return array_key_exists($type, $this->types) ? $this->types[$type] : 'mixed';
-    }
-
-    private function registerDoctrineTypeMapping(string $sqlType, string $phpType, string $connection = null): void
-    {
-        $manager = $this->databaseManager->connection($connection)->getDoctrineSchemaManager();
-        $manager->getDatabasePlatform()->registerDoctrineTypeMapping($sqlType, $phpType);
     }
 }
