@@ -3,7 +3,7 @@
 namespace Krlove\EloquentModelGenerator\Command;
 
 use Illuminate\Console\Command;
-use Illuminate\Database\DatabaseManager;
+use Krlove\EloquentModelGenerator\CustomDatabaseManager;
 use Krlove\EloquentModelGenerator\Generator;
 use Krlove\EloquentModelGenerator\Helper\Prefix;
 use Symfony\Component\Console\Input\InputArgument;
@@ -14,7 +14,7 @@ class GenerateModelCommand extends Command
 
     protected $name = 'krlove:generate:model';
 
-    public function __construct(private Generator $generator, private DatabaseManager $databaseManager)
+    public function __construct(private Generator $generator, private CustomDatabaseManager $databaseManager)
     {
         parent::__construct();
     }
