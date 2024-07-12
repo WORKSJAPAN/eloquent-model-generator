@@ -4,7 +4,7 @@ namespace Krlove\EloquentModelGenerator\Command;
 
 use Illuminate\Config\Repository as AppConfig;
 use Illuminate\Console\Command;
-use Illuminate\Database\DatabaseManager;
+use Krlove\EloquentModelGenerator\CustomDatabaseManager;
 use Krlove\EloquentModelGenerator\Generator;
 use Krlove\EloquentModelGenerator\Helper\EmgHelper;
 use Krlove\EloquentModelGenerator\Helper\Prefix;
@@ -16,7 +16,7 @@ class GenerateModelsCommand extends Command
 
     protected $name = 'krlove:generate:models';
 
-    public function __construct(private Generator $generator, private DatabaseManager $databaseManager)
+    public function __construct(private Generator $generator, private CustomDatabaseManager $databaseManager)
     {
         parent::__construct();
     }

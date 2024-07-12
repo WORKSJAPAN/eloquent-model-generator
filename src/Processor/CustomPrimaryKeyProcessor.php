@@ -2,9 +2,9 @@
 
 namespace Krlove\EloquentModelGenerator\Processor;
 
-use Illuminate\Database\DatabaseManager;
 use Krlove\CodeGenerator\Model\DocBlockModel;
 use Krlove\CodeGenerator\Model\PropertyModel;
+use Krlove\EloquentModelGenerator\CustomDatabaseManager;
 use Krlove\EloquentModelGenerator\Config\Config;
 use Krlove\EloquentModelGenerator\Helper\Prefix;
 use Krlove\EloquentModelGenerator\Model\EloquentModel;
@@ -12,7 +12,7 @@ use Krlove\EloquentModelGenerator\TypeRegistry;
 
 class CustomPrimaryKeyProcessor implements ProcessorInterface
 {
-    public function __construct(private DatabaseManager $databaseManager, private TypeRegistry $typeRegistry) {}
+    public function __construct(private CustomDatabaseManager $databaseManager, private TypeRegistry $typeRegistry) {}
 
     public function process(EloquentModel $model, Config $config): void
     {
